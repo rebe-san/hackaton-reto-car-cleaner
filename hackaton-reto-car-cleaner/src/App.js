@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
 import Welcome from './views/Welcome/index';
 import RegisterUser from './views/RegisterUser/index';
 import RegisterEmployee from './views/RegisterEmployee/index';

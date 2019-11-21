@@ -6,14 +6,12 @@ import {Link} from 'react-router-dom';
 const Welcome = () => {
     return(
       <section className="background-welcome">
-          <nav>
-          <Link to="/registerUser" className="start-button">
-          <Button text="USUARIO" className="size"/>
+          <nav className="navigation-menu">
+          <Link to="/registerUser" className="user-btn">
+          USUARIO
           </Link>
-        </nav>
-        <nav>
-          <Link to="/registerEmployee" className="start-button">
-          <a>Tecnico de lavado</a>
+          <Link to="/registerEmployee" className="nav-a">
+            Técnico de lavado
           </Link>
         </nav>  
       </section> 

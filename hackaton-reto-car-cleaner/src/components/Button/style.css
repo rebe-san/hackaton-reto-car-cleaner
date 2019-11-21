@@ -1,4 +1,5 @@
 .button {
+    width: 80%;
     background: rgb(66, 223, 244);
     background: linear-gradient(90deg, rgba(66, 223, 244, 1) 0%, rgba(25, 130, 197, 1) 100%);
     border-radius: 40px;

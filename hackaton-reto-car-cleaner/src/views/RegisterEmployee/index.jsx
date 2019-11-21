@@ -4,6 +4,7 @@ import {FormEmployee} from '../../components';
 import 'firebase/auth';
 import firebaseConfig from '../../config' 
 import withFirebaseAuth, { WrappedComponentProps } from 'react-with-firebase-auth';
+
 import './style.css';
 
 const RegisterEmployee = ({signInWithEmailAndPassword,
@@ -22,12 +23,18 @@ const RegisterEmployee = ({signInWithEmailAndPassword,
 
 
 
-const firebaseApp = firebase.initializeApp(firebaseConfig);
-const firebaseAppAuth = firebaseApp.auth();
+// const firebaseApp = firebase.initializeApp(firebaseConfig);
+// const firebaseAppAuth = firebaseApp.auth();
+
+// export default withFirebaseAuth({
+//     providers,
+//     firebaseAppAuth,
+// })(RegisterEmployee);
+
 
 export default withFirebaseAuth({
     providers,
-    firebaseAppAuth,
+    // firebaseAppAuth,
 })(RegisterEmployee); 
 
 

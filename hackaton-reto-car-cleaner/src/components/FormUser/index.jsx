@@ -1,9 +1,18 @@
 import React from "react";
-import {Input} from '../';
+import { Input } from '../';
+import * as firebase from 'firebase/app';
+import 'firebase/auth';
+import firebaseConfig from '../../config'
+import withFirebaseAuth, { WrappedComponentProps } from 'react-with-firebase-auth';
 import "./style.css";
 import Button from '../Button/index'
-const FormUser = () => {
-    
+
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+
+
+
+
+const FormUser = ({ user, signOut, signInWithGoogle }) => {
     return (
         <form className="form-employee">
             <Input
@@ -11,7 +20,7 @@ const FormUser = () => {
                 name="name"
                 placeholder="Nombre de usuario"
             />
-             <Input
+            <Input
                 type="number"
                 name="phone"
                 placeholder="Teléfono"
@@ -21,21 +30,35 @@ const FormUser = () => {
                 name="email"
                 placeholder="Correo electrónico"
             />
-           
-             <Input
+
+            <Input
                 type="password"
                 name="password"
                 placeholder="Crear contraseña"
             />
-             <Input
+            <Input
                 type="password"
                 name="confirm-password"
                 placeholder="Confirmar contraseña"
-            />          
-            <Button text = "SIGUIENTE"/>
-        </form>
+            />
+            <Button text="SIGUIENTE" />
+            <div>
+           
+                    < button onClick={signInWithGoogle}>Sign in with Google</button>
+          
+            </div>
+        </form >
     )
 
 }
 
-export default FormUser;
+const firebaseAppAuth = firebaseApp.auth();
+const providers = {
+    googleProvider: new firebase.auth.GoogleAuthProvider(),
+  };
+
+  export default withFirebaseAuth({
+    providers,
+    firebaseAppAuth,
+  })(FormUser);
+

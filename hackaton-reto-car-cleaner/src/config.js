@@ -1,5 +1,7 @@
+
  import * as firebase from 'firebase/firebase-app'
 //  const firebaseConfig = { 
+
 //     apiKey: process.env.API_KEY, 
 //     authDomain: process.env.AUTH_DOMAIN,
 //     databaseURL: process.env.DATABASE_URL,
@@ -25,3 +27,4 @@ const firebaseConfig = {
         firebase.initializeApp(firebaseConfig); 
 
           export default firebaseConfig;
+
